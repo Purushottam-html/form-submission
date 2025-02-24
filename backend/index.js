@@ -2,9 +2,15 @@ import express from "express";
 import mongoose from "mongoose";
 import connectDB from "./db/db.js";
 import 'dotenv/config'
+import cors from "cors"
 
 
 const app = express();
+
+app.use(cors({
+  origin: '*', 
+  methods: ['GET', 'POST'], 
+}));
 
 app.use(express.json()); 
 
